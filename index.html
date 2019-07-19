@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.item {
+				width: 50px;
+				height: 50px;
+				cursor: move;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				border: 1px dashed #CCCCCC;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% 100%;
+				max-width: 100%;
+				max-height: 100%;
+				box-sizing: border-box;
+			}
+			.box {
+				width: 300px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+				border: 1px solid #0099CC;
+			}
+			.coor {
+				width: 10px;
+				height: 10px;
+				overflow: hidden;
+				position: absolute;
+				background-color: #09C;
+				top: calc(100% - 10px);
+				left: calc(100% - 10px);
+				cursor: se-resize;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item" style="background: aquamarine;left: 60px;">
+				<div class="coor"></div>
+			</div>
+			<div class="item" style="background: bisque;top:60px">
+				<div class="coor"></div>
+			</div>
+			<div class="item" style="background: lavenderblush;">
+				<div class="coor"></div>
+			</div>
+		</div>
+		<script src="boxDrag.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.item').myDrag({
+					scope: '.box', //父级
+					handle: '.coor', //手柄
+//					grid: [10,10], //网格式移动
+//					deviation: [10, 20], //模块可以超出边界的部分像素值
+//					cbStart: function() {console.log('cbStart')}, //移动前的回调函数
+//					cbMove: function() {console.log('cbMove')}, //移动中的回调函数
+//					cbEnd: function() {console.log('cbEnd')}, //移动结束时候的回调函数
+//					stStart: function() {console.log('stStart')}, //伸缩前的回调函数
+//					stEnd: function() {console.log('stEnd')}, //伸缩后的回调函数
+//					stMove: function(){console.log('stMove')}, //伸缩中的回调函数
+//					ifTop: true, //是否点击置顶
+//					scale: true, //按宽高比例伸展
+				})
+			});
+		</script>
+	</body>
+</html>
